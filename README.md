@@ -27,6 +27,8 @@ To use this repository, you'll need to either use the `mybinder.org` link below 
 
 This quick tutorial shows you how to navigate the repository and use some of the functionality of the library.
 
+https://user-images.githubusercontent.com/19631663/145808231-b595b727-927e-4f28-9264-776a82a8c0a3.mp4
+
 ## What can you find in this repository
 
 * `1.experimental_data`: data from the TCV experimental campaign, in NetCDF, MATLAB and IMAS formats, as well as information about the reference scenario, and the reference magnetic geometry (in `.eqdsk`, `IMAS` and `PARALLAX-nc` formats)
