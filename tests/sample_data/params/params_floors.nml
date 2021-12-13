@@ -1,0 +1,7 @@
+! Floor values for the simulation
+
+&params_floors
+    ne_floor                        = 5E-2
+    te_floor                        = 5E-2
+    ti_floor                        = 5E-2
+/

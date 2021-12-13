@@ -1,0 +1,69 @@
+! Defines parameters which should be shared by all runs
+
+! &params_iotrunk
+!     trunk_mgrids_descr              = TRUNK_READ
+!     trunk_map_descr                 = TRUNK_READ
+!     trunk_polars_descr              = TRUNK_READ
+!     trunk_penalisation_descr        = TRUNK_READ
+!     trunk_target_trace_descr        = TRUNK_READ
+! /
+
+! &params_init
+!     init_type                       = 0
+! /
+
+&params_multigrid
+    prec_tol                        = 1.0E-7
+    prec_nlvl                       = 4
+    prec_pres                       = 4
+    prec_posts                      = 4
+    prec_cycle                      = 2
+    prec_maxiter                    = 50
+    prec_cout                       = 0
+/
+
+&params_PIMsolver
+    parheat_implicit_e              = 1
+    parheat_implicit_i              = 1
+    parheat_implicit_u              = 1
+    parheat_flutter_implicit_e      = 0
+    parheat_flutter_implicit_i      = 0
+    PIM_maxiter                     = 50
+    PIM_restart                     = 10
+    PIM_stoptype                    = 2
+    PIM_tol                         = 1.0E-8
+/
+
+&params_map
+    map_interpol                    = 3
+    map_xorder                      = 1
+/
+
+&params_trace
+    max_trace_angle_in_divertor     = 1000.0
+    max_trace_angle_in_vessel       = 1000.0
+/
+
+! &params_init_condition
+!     ! Density
+!     ne_rho_core = 0.25
+!     ne_rho_ped  = 0.9
+!     ne_val_core = 3.5
+!     ne_val_ped  = 1.25
+!     ne_val_sol  = 0.1
+!     amp_ne      = 1E-6
+!     ! Electron temp
+!     te_rho_core = 0.25
+!     te_rho_ped  = 0.9
+!     te_val_core = 14.5
+!     te_val_ped  = 2.5
+!     te_val_sol  = 0.1
+!     amp_te      = 1E-6
+!     ! Ion temp
+!     ti_rho_core = 0.45
+!     ti_rho_ped  = 0.9
+!     ti_val_core = 9.0
+!     ti_val_ped  = 2.0
+!     ti_val_sol  = 0.1
+!     amp_ti      = 1E-6
+! /

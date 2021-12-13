@@ -1,0 +1,11 @@
+! For all cases which aren't the reversed field case (R*), use this geometry
+! N.b. the path_to_netcdf is relative to the run, not to the parameter file
+
+&equi_numerical_params
+    equilibrium_case                 = "TCV_ortho"
+    path_to_netcdf                   = ".."
+    set_rhomin                       = T
+    rhomin                           = 0.0
+    flip_z                           = T
+    helicity                         = -1.0
+/

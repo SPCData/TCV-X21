@@ -1,0 +1,13 @@
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--cov=tcvx21 --cov-report xml --cov-report term"
+testpaths = [
+    "tests",
+    "notebooks"
+]
+norecursedirs = [
+    "tcvx21_env"
+]
+
+[tool.jupytext]
+formats = "ipynb,py:percent"

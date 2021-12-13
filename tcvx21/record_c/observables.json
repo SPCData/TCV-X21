@@ -1,0 +1,604 @@
+{
+    "LFS-LP": {
+        "name": "Low-field-side target Langmuir probes",
+        "observables": {
+            "density": {
+                "name": "Plasma density",
+                "units": "1/m^3",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "electron_temp": {
+                "name": "Electron temperature",
+                "units": "eV",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "ion_temp": {
+                "name": "Ion temperature",
+                "units": "eV",
+                "experimental_hierarchy": -1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "potential": {
+                "name": "Plasma potential",
+                "units": "V",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "current": {
+                "name": "Parallel current",
+                "units": "A/m^2",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "current_std": {
+                "name": "Standard deviation of the parallel current",
+                "units": "A/m^2",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "jsat": {
+                "name": "Ion saturation current",
+                "units": "A/m^2",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "jsat_std": {
+                "name": "Standard deviation of the ion saturation current",
+                "units": "A/m^2",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "jsat_skew": {
+                "name": "Skew of the ion saturation current",
+                "units": "",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "jsat_kurtosis": {
+                "name": "Pearson kurtosis of the ion saturation current",
+                "units": "",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "vfloat": {
+                "name": "Floating potential",
+                "units": "V",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "vfloat_std": {
+                "name": "Standard deviation of the floating potential",
+                "units": "V",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            }
+        }
+    },
+    "LFS-IR": {
+        "name": "Low-field-side target infrared camera",
+        "observables": {
+            "q_parallel": {
+                "name": "Parallel heat flux",
+                "units": "W/m^2",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            }
+        }
+    },
+    "HFS-LP": {
+        "name": "High-field-side target Langmuir probes",
+        "observables": {
+            "density": {
+                "name": "Plasma density",
+                "units": "1/m^3",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "electron_temp": {
+                "name": "Electron temperature",
+                "units": "eV",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "ion_temp": {
+                "name": "Ion temperature",
+                "units": "eV",
+                "experimental_hierarchy": -1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "potential": {
+                "name": "Plasma potential",
+                "units": "V",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "current": {
+                "name": "Parallel current",
+                "units": "A/m^2",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "current_std": {
+                "name": "Standard deviation of the parallel current",
+                "units": "A/m^2",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "jsat": {
+                "name": "Ion saturation current",
+                "units": "A/m^2",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "jsat_std": {
+                "name": "Standard deviation of the ion saturation current",
+                "units": "A/m^2",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "jsat_skew": {
+                "name": "Skew of the ion saturation current",
+                "units": "",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "jsat_kurtosis": {
+                "name": "Pearson kurtosis of the ion saturation current",
+                "units": "",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "vfloat": {
+                "name": "Floating potential",
+                "units": "V",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "vfloat_std": {
+                "name": "Standard deviation of the floating potential",
+                "units": "V",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            }
+        }
+    },
+    "FHRP": {
+        "name": "Outboard midplane reciprocating probe",
+        "observables": {
+            "density": {
+                "name": "Plasma density",
+                "units": "1/m^3",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "electron_temp": {
+                "name": "Electron temperature",
+                "units": "eV",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "ion_temp": {
+                "name": "Ion temperature",
+                "units": "eV",
+                "experimental_hierarchy": -1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "potential": {
+                "name": "Plasma potential",
+                "units": "V",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "jsat": {
+                "name": "Ion saturation current",
+                "units": "A/m^2",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "jsat_std": {
+                "name": "Standard deviation of the ion saturation current",
+                "units": "A/m^2",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "jsat_skew": {
+                "name": "Skew of the ion saturation current",
+                "units": "",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "jsat_kurtosis": {
+                "name": "Pearson kurtosis of the ion saturation current",
+                "units": "",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "vfloat": {
+                "name": "Floating potential",
+                "units": "V",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "vfloat_std": {
+                "name": "Standard deviation of the floating potential",
+                "units": "V",
+                "experimental_hierarchy": 1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "mach_number": {
+                "name": "Plasma velocity normalised to local sound speed",
+                "units": "",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            }
+        }
+    },
+    "TS": {
+        "name": "Thomson scattering at divertor entrance (Z<0)",
+        "observables": {
+            "density": {
+                "name": "Plasma density",
+                "units": "1/m^3",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "electron_temp": {
+                "name": "Electron temperature",
+                "units": "eV",
+                "experimental_hierarchy": 2,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            },
+            "ion_temp": {
+                "name": "Ion temperature",
+                "units": "eV",
+                "experimental_hierarchy": -1,
+                "dimensionality": 1,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm"
+            }
+        }
+    },
+    "RDPA": {
+        "name": "Reciprocating divertor probe array",
+        "observables": {
+            "density": {
+                "name": "Plasma density",
+                "units": "1/m^3",
+                "experimental_hierarchy": 2,
+                "dimensionality": 2,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm",
+                "Zx": [],
+                "Zx_units": "m"
+            },
+            "electron_temp": {
+                "name": "Electron temperature",
+                "units": "eV",
+                "experimental_hierarchy": 2,
+                "dimensionality": 2,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm",
+                "Zx": [],
+                "Zx_units": "m"
+            },
+            "ion_temp": {
+                "name": "Ion temperature",
+                "units": "eV",
+                "experimental_hierarchy": -1,
+                "dimensionality": 2,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm",
+                "Zx": [],
+                "Zx_units": "m"
+            },
+            "potential": {
+                "name": "Plasma potential",
+                "units": "V",
+                "experimental_hierarchy": 2,
+                "dimensionality": 2,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm",
+                "Zx": [],
+                "Zx_units": "m"
+            },
+            "jsat": {
+                "name": "Ion saturation current",
+                "units": "A/m^2",
+                "experimental_hierarchy": 1,
+                "dimensionality": 2,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm",
+                "Zx": [],
+                "Zx_units": "m"
+            },
+            "jsat_std": {
+                "name": "Standard deviation of the ion saturation current",
+                "units": "A/m^2",
+                "experimental_hierarchy": 1,
+                "dimensionality": 2,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm",
+                "Zx": [],
+                "Zx_units": "m"
+            },
+            "jsat_skew": {
+                "name": "Skew of the ion saturation current",
+                "units": "",
+                "experimental_hierarchy": 1,
+                "dimensionality": 2,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm",
+                "Zx": [],
+                "Zx_units": "m"
+            },
+            "jsat_kurtosis": {
+                "name": "Pearson kurtosis of the ion saturation current",
+                "units": "",
+                "experimental_hierarchy": 1,
+                "dimensionality": 2,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm",
+                "Zx": [],
+                "Zx_units": "m"
+            },
+            "vfloat": {
+                "name": "Floating potential",
+                "units": "V",
+                "experimental_hierarchy": 1,
+                "dimensionality": 2,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm",
+                "Zx": [],
+                "Zx_units": "m"
+            },
+            "vfloat_std": {
+                "name": "Standard deviation of the floating potential",
+                "units": "V",
+                "experimental_hierarchy": 1,
+                "dimensionality": 2,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm",
+                "Zx": [],
+                "Zx_units": "m"
+            },
+            "mach_number": {
+                "name": "Plasma velocity normalised to local sound speed",
+                "units": "",
+                "experimental_hierarchy": 2,
+                "dimensionality": 2,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "Ru": [],
+                "Ru_units": "cm",
+                "Zx": [],
+                "Zx_units": "m"
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "density": 1,
+    "electron_temp": 1,
+    "ion_temp": 1,
+    "potential": 1,
+    "jsat": 2,
+    "jsat_std": 2,
+    "jsat_skew": 2,
+    "jsat_kurtosis": 2,
+    "vfloat": 2,
+    "vfloat_std": 2,
+    "current": 2,
+    "current_std": 2,
+    "flow_z": 2,
+    "mach_number": 3,
+    "q_parallel": 2,
+    "lambda_q": 2
+}

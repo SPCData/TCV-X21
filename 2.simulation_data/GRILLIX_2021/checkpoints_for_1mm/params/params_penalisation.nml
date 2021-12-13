@@ -1,0 +1,10 @@
+! Penalisation parameters. Unlikely that these will change, but might have to tune pen_eps
+
+&params_penalisation
+    chi_thresh                      = 1E-20
+    pen_eps                         = 0.15E-2
+    chi_width                       = 5.0
+    xi_width                        = 1.0
+    step_type                       = 2
+    step_order                      = 3
+/

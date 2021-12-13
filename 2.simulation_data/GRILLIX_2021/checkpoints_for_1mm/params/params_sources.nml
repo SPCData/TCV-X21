@@ -1,0 +1,15 @@
+! For cases which are NOT the density source scan (i.e. S* cases), use a common value of the source
+! May be tuned
+! Corresponds to 150kW of constant injected power, plus a variable density source rate
+
+&params_srcsnk
+    csrcn                           = 1.65487546E-2 !Matches S4 source rate
+    csrcte                          = 0.375 !Corresponds to 150kW
+    csrcti                          = 0.0
+    srctpy_n                        = 3
+    rhosrcn                         = 0.9151419991677013
+    wsrcn                           = 0.08379713298421386
+    srctpy_t                        = 5
+    rhosrct                         = 0.3
+    wsrct                           = 0.3
+/

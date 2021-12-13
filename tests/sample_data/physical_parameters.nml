@@ -1,0 +1,19 @@
+&physical_parameters
+    case_name = TCV_65402
+    ! Magnetic field normalisation, usually taken on axis, in Tesla
+    B0 = 0.929
+    ! Electron temperature normalisation, in electron-volts
+    Te0 = 41.3
+    ! Ion temperature normalisation, in electron-volts
+    Ti0 = 41.3
+    ! Density normalisation, in particles-per-cubic-metres
+    n0 = 1E19
+    ! Major radius, in metres
+    R0 = 0.906
+    ! Ion mass, in amu
+    Mi = 2
+    ! Ion charge, in e
+    Z = 1
+    ! Ion effective charge, in e
+    Z_eff = 1.5
+/

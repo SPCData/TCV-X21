@@ -1,0 +1,3 @@
+GRILLIX 2mm favourable field direction simulation, using GRILLIX version ffbe7bb7fc0e0d5ccb8ff62a3cc9b3d735dcb967
+Sample data only, since only a single plane for 0.5 time-units is provided
+Thomas Body, thomas.body@ipp.mpg.de

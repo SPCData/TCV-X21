@@ -1,0 +1,8 @@
+**/env
+**/.idea
+**/.pytest_cache
+**/.*
+coverage.xml
+**/results
+**/*.egg-info
+**/.git/lfs

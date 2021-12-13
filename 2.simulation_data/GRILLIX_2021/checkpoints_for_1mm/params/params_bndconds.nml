@@ -1,0 +1,45 @@
+! Boundary conditions. Unlikely that you'll want to change these, but might have to
+
+&params_bndconds
+    ! sheath floating potential
+    lambda_sh                       = 2.69
+    ! transmission factor (anomalous)
+    gamma_she                       = 2.5
+    gamma_shi                       = 0.1
+    ! rho of last closed flux surface for potential core boundary condition (set to zero, full device simulation)
+    rholcfs_for_potcore             = 0.0
+    bndflow_Ti                      = 1.0
+    ! Neumann boundary conditions for density
+    ne_bndtpy_wall_descr            = BNDTPY_NEUMANN
+    ne_bndtpy_core_descr            = BNDTPY_NEUMANN
+    ne_bndtpy_par_descr             = BNDTPY_NEUMANN
+    ! Radially Neumann for electron temperature
+    te_bndtpy_wall_descr            = BNDTPY_NEUMANN
+    te_bndtpy_core_descr            = BNDTPY_NEUMANN
+    ! Sheath transmission at sheath
+    te_bndtpy_par_descr             = BNDTPY_PARHEAT
+    ! Radially Neumann for electron temperature
+    ti_bndtpy_wall_descr            = BNDTPY_NEUMANN
+    ti_bndtpy_core_descr            = BNDTPY_NEUMANN
+    ! Sheath transmission at sheath
+    ti_bndtpy_par_descr             = BNDTPY_PARHEAT
+    ! Potential at wall set to local lambda*Te
+    pot_bndtpy_wall_descr           = BNDTPY_POT_LAMBDATE
+    ! Potential at core set to lambda*<T_e>_LCFS (not used)
+    pot_bndtpy_core_descr           = BNDTPY_ZONAL_NEUMANN
+    ! Potential at sheath set to local lambda*Te, consistent with jpar =0
+    pot_bndtpy_par_descr            = BNDTPY_POT_LAMBDATE_TARGET
+    ! Vorticity radially Dirichlet, at sheath Neumann
+    vort_bndtpy_wall_descr          = BNDTPY_DIRICHLET_ZERO
+    vort_bndtpy_core_descr          = BNDTPY_DIRICHLET_ZERO
+    vort_bndtpy_par_descr           = BNDTPY_NEUMANN
+    ! Parallel velocity radially Neumann, at sheath > c_s (supersonic)
+    upar_bndtpy_wall_descr          = BNDTPY_NEUMANN
+    upar_bndtpy_core_descr          = BNDTPY_NEUMANN
+    upar_bndtpy_par_descr           = BNDTPY_PARBOHM_TARGET_E3
+    ! Current vanishes at limiting flux surfaces
+    jpar_bndtpy_wall_descr          = BNDTPY_DIRICHLET_ZERO
+    jpar_bndtpy_core_descr          = BNDTPY_DIRICHLET_ZERO
+    ! Insulating sheath boundary condition
+    jpar_bndtpy_par_descr           = BNDTPY_DIRICHLET_ZERO
+/

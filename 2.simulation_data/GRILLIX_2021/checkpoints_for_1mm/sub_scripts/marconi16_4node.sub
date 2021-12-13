@@ -1,0 +1,42 @@
+#!/bin/bash
+# Standard output and error:
+#SBATCH -o outputs/%x.%A_%a.4x4x12.out
+#SBATCH -e outputs/%x.%A_%a.4x4x12.err
+# Initial working directory:
+#SBATCH -D ./
+# Number of nodes and MPI tasks per node:
+#SBATCH --nodes=4
+#SBATCH --ntasks-per-node=4
+# for OpenMP:
+#SBATCH --cpus-per-task=12
+#
+#SBATCH --mail-type=none
+#SBATCH --mail-user=email@ipp.mpg.de
+# Wall clock limit:
+#SBATCH --time=24:00:00
+#SBATCH --time-min=22:00:00
+# 
+# MARCONI SPECIFIC
+#SBATCH -p skl_fua_prod     # partition: see sinfo (skl_fua_pro, skl_fua_dbg, knl_fua_prod)
+#SBATCH -A FUA35_TSVV3    # account: saldo -b --skl
+
+module purge
+module load profile/base
+module load intel/pe-xe-2018--binary
+module load intelmpi/2018--binary
+module load mkl/2018--binary
+module load zlib/1.2.8--gnu--6.1.0
+module load szip/2.1--gnu--6.1.0
+module load hdf5/1.10.4--intel--pe-xe-2018--binary
+module load netcdf/4.6.1--intel--pe-xe-2018--binary
+module load netcdff/4.4.4--intel--pe-xe-2018--binary
+
+export I_MPI_PIN_MODE=lib
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+# For pinning threads correctly:
+export OMP_PLACES=cores
+
+cp ../grillix_general grillix_general_local_copy
+# Run the program:
+srun ./grillix_general_local_copy
+rm grillix_general_local_copy

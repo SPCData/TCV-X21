@@ -1,0 +1,145 @@
+&params_filepaths
+    map_params_path          = '../params/params_common.nml'
+    trace_params_path        = '../params/params_common.nml'
+    multigrid_params_path    = '../params/params_common.nml'
+    PIMsolver_params_path    = '../params/params_common.nml'
+    ! grid_params_path         = '../params/params_geo_grid.nml'
+    equi_init_params_path    = '../params/params_geo_equi.nml'
+    ! physmod_params_path      = '../params/params_diffusion_coeffs.nml'
+    ! bufferz_params_path      = '../params/params_diffusion_coeffs.nml'
+    ! bndconds_params_path     = '../params/params_bndconds.nml'
+    floors_params_path       = '../params/params_floors.nml'
+    penalisation_params_path = '../params/params_penalisation.nml'
+    srcsnk_params_path       = '../params/params_sources.nml'
+/
+
+! SCANNED PARAMETER
+&params_grid
+    hf                              = 0.0011
+    npol                            = 16
+    rhos                            = 0.0011
+/
+
+! CONTROL PARAMETERS
+&params_tstep
+    tau_fin                         = 1000.1
+    dtau_min                        = 1.0E-6
+    dtau_max                        = 5.00E-5
+    tau_diag                        = 0.01
+    tau_snaps                       = 0.1
+/
+
+&params_iotrunk
+    trunk_mgrids_descr              = TRUNK_READ
+    trunk_map_descr                 = TRUNK_READ
+    trunk_polars_descr              = TRUNK_READ
+    trunk_penalisation_descr        = TRUNK_READ
+    trunk_target_trace_descr        = TRUNK_READ
+/
+
+&params_init
+    init_type                       = 0
+/
+
+! DIFFUSION PARAMS
+&params_physmod
+    fullf                           = 1
+    bsq                             = 0
+    isotherm                        = 0
+    tratio                          = 1
+    mu                              = 2.7231e-04
+    beta                            = 9.6510e-05
+    collfreqe                       = 42.7162
+    etapar                          = 0.0059
+    etai                            = 2.8903
+    chipare                         = 270.8047
+    chipare_lim                     = 600.0 !Periodic limiter set from D2
+    chipari                         = 11.7417
+    chipari_lim                     = 30.0 !Periodic limiter set from D2 (increased by factor of 3)
+    wnl                             = 906.2264
+    wcv                             = 1
+    wpar                            = 1
+    wpare                           = 1
+    ! wcv_flutter                     = 1.0
+    nvisc_n                         = 3
+    nvisc_te                        = 3
+    nvisc_ti                        = 3
+    nvisc_w                         = 3
+    nvisc_u                         = 3
+    nvisc_p                         = 3
+    nu_n                            = 2.1E+1
+    nu_te                           = 2.1E+1
+    nu_ti                           = 2.1E+1
+    nu_w                            = 2.1E+1
+    nu_u                            = 2.1E+1
+    nu_p                            = 2.1E+1
+    pardif_n                        = 0.01
+    pardif_te                       = 0
+    pardif_ti                       = 0
+    pardif_w                        = 0.01
+    pardif_u                        = 0.01
+    pardif_p                        = 0
+    sw_logne                        = 1
+    sw_logte                        = 1
+    sw_logti                        = 1
+    sw_vort                         = 1
+    sw_upar                         = 1
+    sw_psim                         = 1
+    ! sw_flutter                      = 0
+/
+
+&params_bufferz
+    cbfd_n                          = 1.0E+3
+    cbfd_te                         = 1.0E+3
+    cbfd_ti                         = 1.0E+3
+    cbfd_w                          = 1.0E+3
+    cbfd_u                          = 1.0E+3
+    cbfd_p                          = 0
+    wbfd_core                       = -1.0
+    wbfd_edge                       = 0.01
+    wbfd_pf                         = 0.0
+/
+
+&params_bndconds
+    ! sheath floating potential
+    lambda_sh                       = 2.69
+    ! transmission factor (anomalous)
+    gamma_she                       = 2.5
+    gamma_shi                       = 0.1
+    ! rho of last closed flux surface for potential core boundary condition (set to zero, full device simulation)
+    rholcfs_for_potcore             = 0.0
+    bndflow_Ti                      = 1.0
+    ! Neumann boundary conditions for density
+    ne_bndtpy_wall_descr            = BNDTPY_NEUMANN
+    ne_bndtpy_core_descr            = BNDTPY_NEUMANN
+    ne_bndtpy_par_descr             = BNDTPY_NEUMANN
+    ! Radially Neumann for electron temperature
+    te_bndtpy_wall_descr            = BNDTPY_NEUMANN
+    te_bndtpy_core_descr            = BNDTPY_NEUMANN
+    ! Sheath transmission at sheath
+    te_bndtpy_par_descr             = BNDTPY_PARHEAT
+    ! Radially Neumann for electron temperature
+    ti_bndtpy_wall_descr            = BNDTPY_NEUMANN
+    ti_bndtpy_core_descr            = BNDTPY_NEUMANN
+    ! Sheath transmission at sheath
+    ti_bndtpy_par_descr             = BNDTPY_PARHEAT
+    ! Potential at wall set to local lambda*Te
+    pot_bndtpy_wall_descr           = BNDTPY_POT_LAMBDATE
+    ! Potential at core set to lambda*<T_e>_LCFS (not used)
+    pot_bndtpy_core_descr           = BNDTPY_ZONAL_NEUMANN
+    ! Potential at sheath set to local lambda*Te, consistent with jpar =0
+    pot_bndtpy_par_descr            = BNDTPY_POT_LAMBDATE_TARGET
+    ! Vorticity radially Dirichlet, at sheath Neumann
+    vort_bndtpy_wall_descr          = BNDTPY_DIRICHLET_ZERO
+    vort_bndtpy_core_descr          = BNDTPY_DIRICHLET_ZERO
+    vort_bndtpy_par_descr           = BNDTPY_NEUMANN
+    ! Parallel velocity radially Neumann, at sheath > c_s (supersonic)
+    upar_bndtpy_wall_descr          = BNDTPY_NEUMANN
+    upar_bndtpy_core_descr          = BNDTPY_NEUMANN
+    upar_bndtpy_par_descr           = BNDTPY_PARBOHM_TARGET_E3
+    ! Current vanishes at limiting flux surfaces
+    jpar_bndtpy_wall_descr          = BNDTPY_DIRICHLET_ZERO
+    jpar_bndtpy_core_descr          = BNDTPY_DIRICHLET_ZERO
+    ! Use quasi-conducting boundary conditions. I.e. eliminate the divjpar term.
+    jpar_bndtpy_par_descr           = BNDTPY_NEUMANN
+/

@@ -1,0 +1,39 @@
+# Pinned versions, for reproducibility. Corresponds exactly to the docker image
+# jupyter/scipy-notebook:lab-3.0.16
+channels:
+  - conda-forge
+dependencies:
+  # Core python
+  - python=3.9.7
+  - pip=21.3.1
+  # Core libraries
+  - numpy=1.20.3
+  - scipy=1.7.1
+  - matplotlib-base=3.4.3
+  - matplotlib-inline=0.1.3
+  - scikit-image=0.18.3
+  - pandas=1.3.4
+  # File I/O
+  - xarray=0.20.1
+  - netcdf4=1.5.8
+  - hdf5=1.12.1
+  - f90nml=1.3.1
+  # Units
+  - pint=0.18
+  # Interactive notebooks
+  - jupyterlab=3.2.2
+  - ipykernel=6.4.2
+  - nodejs
+  - ipympl=0.8.2
+  - ipython=7.29.0
+  - ipywidgets=7.6.5
+  # Code testing
+  - pytest=6.2.5
+  - pytest-cov=3.0.0
+  - pytest-xdist=2.4.0
+  - coverage=6.1.1
+  - jupytext=1.13.3
+  - black=21.11b1
+  # Command-line tools
+  - click=8.0.3
+
