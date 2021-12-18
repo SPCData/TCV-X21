@@ -7,9 +7,9 @@
 #       format_version: '1.3'
 #       jupytext_version: 1.13.3
 #   kernelspec:
-#     display_name: Python 3 (ipykernel)
+#     display_name: tcv-x21
 #     language: python
-#     name: python3
+#     name: tcv-x21
 # ---
 
 # %% [markdown] pycharm={"name": "#%% md\n"}
@@ -198,7 +198,7 @@ axs[3].legend(loc="upper right")
 label_subplots(axs)
 
 tcvx21.plotting.savefig(
-    fig, tcvx21.results_dir / "analysis_fig" / "poloidal_profiles.png"
+    fig, tcvx21.results_dir / "analysis_fig" / "poloidal_profiles.png", show=True
 )
 
 if test_session:
@@ -300,6 +300,7 @@ if test_session:
 
 # %%
 from tcvx21 import Record, EmptyRecord
+from tcvx21.plotting import format_yaxis
 
 # Experiment reference data
 experimental_data = dict(
@@ -374,6 +375,7 @@ def set_limits_from_observable(
         ax.set_title(f"{field_direction}:{diagnostic}:{observable_key}")
         ax.axvline(position_min)
         ax.axvline(position_max)
+        format_yaxis(ax)
 
     observable.set_mask(position_min=position_min, position_max=position_max)
     if plot:

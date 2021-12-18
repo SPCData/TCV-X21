@@ -86,11 +86,11 @@ def plot_1D_comparison(
         )
     )
 
+    ax.legend()
     # Apply custom limits if they are defined
     reference.apply_plot_limits(ax)
+
     plt.draw()
     format_yaxis(ax)
-
-    plt.legend()
 
     return fig, ax

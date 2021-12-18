@@ -114,8 +114,8 @@ class Observable2D(Observable):
         else:
             raise NotImplementedError(f"No implementation for plot_type = {plot_type}")
 
-        ax.set_xlabel(r"$R^u - R^u_{sep}$" + f" [{ax.xaxis.units}]")
-        ax.set_ylabel(r"$Z - Z_X$" + f" [{ax.yaxis.units}]")
+        ax.set_xlabel("$R^u - R^u_{sep}$" + f" [{Quantity(1, ax.xaxis.units).units:~P}]")
+        ax.set_ylabel("$Z - Z_X$" + f" [{Quantity(1, ax.yaxis.units).units:~P}]")
 
         return image
 

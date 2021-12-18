@@ -390,7 +390,7 @@ make_eich_fit_comparison(experimental_data, simulation_data)
 
 # %% jupyter={"outputs_hidden": false} pycharm={"name": "#%%\n"} tags=[]
 # Plot each observable individually
-from tcvx21.plotting.plot_comparison_m import plot_comparison
+from tcvx21.plotting import plot_comparison
 
 for field_direction, dataset in experimental_data.items():
     for diagnostic, observable in dataset.keys():

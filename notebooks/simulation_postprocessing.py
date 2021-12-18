@@ -289,12 +289,14 @@ lineout_density_ = convert_xarray_to_quantity(
     lineout_.interpolate(snaps.density).mean(dim="phi")
 ).to("1/m^3")
 
-plt.contourf(lineout_ru_, tau_, lineout_density_, shading="nearest")
-plt.colorbar()
+fig, ax = plt.subplots()
 
-plt.ylabel("$\\tau$ [$\\mu$ s]")
-plt.xlabel("$R^u - R^u_{sep}$ [cm]")
-plt.title("OMP density [$1/m^3$]")
+im = ax.contourf(lineout_ru_, tau_, lineout_density_, shading="nearest")
+plt.colorbar(im, ax=ax)
+
+ax.set_ylabel("$\\tau$ [$\\mu$ s]")
+ax.set_xlabel("$R^u - R^u_{sep}$ [cm]")
+ax.set_title("OMP density [$1/m^3$]")
 
 if test_session:
     plt.close("all")
@@ -346,13 +348,15 @@ jsat_skew_, jsat_skew_err_ = tcvx21.analysis.compute_statistical_moment_with_boo
 jsat_skew_ = convert_xarray_to_quantity(jsat_skew_)
 jsat_skew_err_ = convert_xarray_to_quantity(jsat_skew_err_)
 
-plt.plot(lineout_ru_, jsat_skew_)
-plt.fill_between(
+fig, ax = plt.subplots()
+
+ax.plot(lineout_ru_, jsat_skew_)
+ax.fill_between(
     lineout_ru_, jsat_skew_ + jsat_skew_err_, jsat_skew_ - jsat_skew_err_, alpha=0.5
 )
 
-plt.xlabel("$R^u - R^u_{sep}$ [cm]")
-plt.title("LFS ion saturation current skewness")
+ax.set_xlabel("$R^u - R^u_{sep}$ [cm]")
+ax.set_title("LFS ion saturation current skewness")
 
 if test_session:
     plt.close("all")
@@ -433,23 +437,25 @@ q_par = grillix.observables.total_parallel_heat_flux(
     norm,
 ).load()
 
-plt.plot(lineout_ru_, convert_xarray_to_quantity(q_e_conv), label="q_e_conv")
-plt.plot(lineout_ru_, convert_xarray_to_quantity(q_i_conv), label="q_i_conv")
-plt.plot(lineout_ru_, convert_xarray_to_quantity(q_e_cond), label="q_e_cond")
-plt.plot(lineout_ru_, convert_xarray_to_quantity(q_i_cond), label="q_i_cond")
-plt.plot(lineout_ru_, convert_xarray_to_quantity(q_i_exb), label="q_i_exb")
-plt.plot(lineout_ru_, convert_xarray_to_quantity(q_e_exb), label="q_e_exb")
+fig, ax = plt.subplots()
 
-plt.plot(
+ax.plot(lineout_ru_, convert_xarray_to_quantity(q_e_conv), label="q_e_conv")
+ax.plot(lineout_ru_, convert_xarray_to_quantity(q_i_conv), label="q_i_conv")
+ax.plot(lineout_ru_, convert_xarray_to_quantity(q_e_cond), label="q_e_cond")
+ax.plot(lineout_ru_, convert_xarray_to_quantity(q_i_cond), label="q_i_cond")
+ax.plot(lineout_ru_, convert_xarray_to_quantity(q_i_exb), label="q_i_exb")
+ax.plot(lineout_ru_, convert_xarray_to_quantity(q_e_exb), label="q_e_exb")
+
+ax.plot(
     lineout_ru_,
     convert_xarray_to_quantity(q_par.isel(tau=0, phi=0)),
     "k--",
     label="total",
 )
 
-plt.legend()
+ax.legend()
 
-plt.figure()
+fig, ax = plt.subplots()
 _, lambda_q, _, _, _ = tcvx21.analysis.fit_eich_profile(
     lineout_ru_, convert_xarray_to_quantity(q_par.mean(dim=("tau", "phi"))), plot=True
 )
@@ -497,7 +503,7 @@ def plot_rdpa_field(rdpa_lineout, field, n_rsep=50, n_z=50):
     plt.ylabel(f"Z [{y.units}]")
     plt.title(f"RDPA {z.name} [{z_sample.units}]")
 
-
+plt.figure()
 plot_rdpa_field(lineouts["rdpa"], snaps.electron_temp.mean(dim=("phi", "tau")))
 
 if test_session:

@@ -25,7 +25,7 @@ def experimental_reference(tcv_forward_data):
 
 @pytest.fixture(scope="module")
 def simulation_sample():
-    return tcvx21.Record(tcvx21.sample_data / "GRILLIX_example.nc")
+    return tcvx21.Record(tcvx21.test_dir / 'comparison_data' / "GRILLIX_example.nc")
 
 
 @pytest.fixture(scope="module")

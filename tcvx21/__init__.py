@@ -3,6 +3,8 @@
 # Only key functionality is imported here -- use the full path to access non-key functionality
 
 from pathlib import Path
+import sys
+test_session = "pytest" in sys.modules
 
 repository_dir = Path(__file__).parents[1]
 library_dir = Path(__file__).parent
@@ -28,7 +30,10 @@ tokam3x_dir = simulation_dir / "TOKAM3X_2021"
 
 notebooks_dir = repository_dir / "notebooks"
 test_dir = repository_dir / "tests"
-results_dir = repository_dir / "3.results"
+if not test_session:
+    results_dir = repository_dir / "3.results"
+else:
+    results_dir = repository_dir / "3.results/temp"
 
 test_figures_dir = results_dir / "test_fig"
 
@@ -46,11 +51,9 @@ style_sheet = library_dir / "tcvx21.mplstyle"
 style_sheet_inline = library_dir / "tcvx21_inline.mplstyle"
 assert style_sheet.exists()
 
-import sys
-
-test_session = "pytest" in sys.modules
-
 from .units_m import Quantity, Dimensionless, convert_xarray_to_quantity, unit_registry
+unit_registry.setup_matplotlib()
+
 from .file_io import read_from_json, write_to_json, read_struct_from_file
 from .record_c import Record, EmptyRecord, template_file
 from .dict_methods_m import (

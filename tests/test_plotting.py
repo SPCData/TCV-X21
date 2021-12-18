@@ -13,7 +13,7 @@ def expt(tcv_forward_data):
 @pytest.fixture(scope="module")
 def sim_sample():
     return tcvx21.Record(
-        tcvx21.sample_data / "GRILLIX_example.nc", color="C1", linestyle="--"
+        tcvx21.test_dir / 'comparison_data' / "GRILLIX_example.nc", color="C1", linestyle="--"
     )
 
 
@@ -184,7 +184,7 @@ def test_plot_comparison_1D_plotlimits(expt):
     sim_with_limits = {
         "test": {
             "forward_field": tcvx21.Record(
-                tcvx21.sample_data / "GRILLIX_example.nc", color="C1", linestyle="--"
+                tcvx21.test_dir / 'comparison_data' / "GRILLIX_example.nc", color="C1", linestyle="--"
             )
         }
     }

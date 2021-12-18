@@ -7,9 +7,9 @@
 #       format_version: '1.3'
 #       jupytext_version: 1.13.3
 #   kernelspec:
-#     display_name: Python 3
+#     display_name: tcv-x21
 #     language: python
-#     name: python3
+#     name: tcv-x21
 # ---
 
 # %% [markdown] pycharm={"name": "#%% md\n"}
@@ -133,3 +133,5 @@ experimental_data = dict(
 )
 
 experimental_data["forward_field"].get_observable("LFS-LP", "density").plot()
+
+# %%
