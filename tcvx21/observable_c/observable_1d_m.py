@@ -171,7 +171,7 @@ class Observable1D(Observable):
 
         self.apply_plot_limits(ax)
 
-        ax.set_xlabel(r"$R^u - R^u_{sep}$" + f" [{ax.xaxis.units}]")
+        ax.set_xlabel("$R^u - R^u_{sep}$" + f" [{ax.xaxis.units:~P}]")
 
         self.mask = original_mask
 
