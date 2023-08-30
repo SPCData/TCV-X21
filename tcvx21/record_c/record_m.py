@@ -72,8 +72,12 @@ class Record:
         """
         Makes a 'observable' object to represent the data stored in the NetCDF
         """
-        data = self.dataset[diagnostic]["observables"][observable]
-        data_template = self.data_template[diagnostic]["observables"][observable]
+        try:
+            data = self.dataset[diagnostic]["observables"][observable]
+            data_template = self.data_template[diagnostic]["observables"][observable]
+        except IndexError:
+            print(f"Observable {diagnostic} / {observable} not available")
+            return
 
         try:
             dimensionality = data.dimensionality
