@@ -66,6 +66,20 @@ For the datasets, we ask that you provide attribution if using this data via the
 
 For the software, you can use, modify and share without attribution or marking changes.
 
+
+### Acknowledgement guidelines
+
+If you use any of the content of the TCV-X21 repository in one of your publications and/or talks, please cite [![DOI](https://doi.org/10.1088/1741-4326/ac4cde) and properly place the acknowledgements as 
+instructed below. We would also appreciate it if you informed us about your work by sending us an email to spc.data@epfl.ch. This will let us keep track of how the dataset is being used.
+
+If you use the TCV-X21 experimental and/or simulation dataset in your article, please use the following acknowledgement: "This work made use of the version X of the TCV-X21 experimental and/or simulation 
+dataset(s) provided by the team(s) Y and publicly released under the CC-BY 4.0 license.". The version X correspons to both the Zenodo version and the Github release version. The teams to be used in Y are those 
+responsible for the preparation of the datasets used in **your** work and are highlighted in boldface in the file `acknowledgements/template_acknowledgement.pptx`.
+
+If you use the TCV-X21 experimental and/or simulation dataset in a talk, please use the layout for acknowlegdements in `tcvx21/template_acknowledgement.pptx` including only the teams that were involved 
+in the preparation of the dataset that you use.
+
+
 ## Running the Jupyter notebooks (installation as non-root user)
 
 To run the Jupyter notebooks, you have two options. The first is to use the `mybinder.org` interface, which let you interact with the notebooks via a web interface. You can launch the binder for this repository by clicking the binder badge in the repository header. Note that not all of the
@@ -94,11 +108,3 @@ Finally, run `jupyter lab` to open a Jupyter server in the TCV-X21 repository. T
 
 To ensure that the results are reproducible, the `environment.yml` file has pinned dependencies. However, if you want to use
 this software as a library, pinned dependencies are unnecessarily restrictive. You can remove the versions after the `=` sign in the `environment.yml`, but be warned that things might break.
-
-### Acknowledgement guidelines
-
-If you use any of the content of the TCV-X21 repository in one of your publications and/or talks, please cite [![DOI](https://doi.org/10.1088/1741-4326/ac4cde) and properly place the acknowledgements as instructed in bellow. We would also appreciate it if you informed us about your work by sending us an email to spc.data@epfl.ch. This will let us keep track of how the dataset is being used. 
-
-If you use the TCV-X21 experimental and/or simulation dataset in your article, please use the following acknowledgement: "This work made use of the version X of the TCV-X21 experimental and/or simulation dataset(s) provided by the team(s) Y and publicly released under the CC-BY 4.0 license.". The version of the dataset to be used in X is given by the Release tag. The teams to be used in Y are those responsible for the preparation of the datasets used in **your** work and are highlighted in boldface in the file `tcvx21/template_acknowledgement.pptx`. 
-
-If you use the TCV-X21 experimental and/or simulation dataset in a talk, please use the layout for acknowlegdements in `tcvx21/template_acknowledgement.pptx` including only the teams that were involved in the preparation of the dataset that you use.
