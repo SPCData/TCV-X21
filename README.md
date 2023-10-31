@@ -4,7 +4,7 @@
 
 <!-- [![Paper](https://img.shields.io/badge/Paper-Nuclear%20Fusion-critical)](https://iopscience.iop.org/journal/0029-5515) -->
 [![arXiv](http://img.shields.io/badge/arXiv-arXiv%3A2109.01618-B31B1B.svg)](https://arxiv.org/abs/2109.01618)
-[![PDF](https://img.shields.io/badge/PDF-Oliveira%20%26%20Body%20et%20al.%202021-important)](2109.01618.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Oliveira%20%26%20Body%20et%20al.%202021-important)](https://doi.org/10.1088/1741-4326/ac4cde)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/SPCData/TCV-X21/HEAD?labpath=tcv-x21.ipynb)
 [![DOI](https://zenodo.org/badge/437798156.svg)](https://zenodo.org/badge/latestdoi/437798156)
