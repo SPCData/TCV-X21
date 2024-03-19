@@ -11,9 +11,6 @@
 [![Dataset licence](https://img.shields.io/badge/Dataset%20License-CC--BY--4.0-brightgreen)](LICENSE)
 [![Software licence](https://img.shields.io/badge/Software%20License-MIT-brightgreen)](tcvx21/LICENSE)
 
-[![Test Python package](https://github.com/SPCData/TCV-X21/actions/workflows/test_python_package.yml/badge.svg?branch=main)](https://github.com/SPCData/TCV-X21/actions/workflows/test_python_package.yml)
-[![codecov](https://codecov.io/gh/SPCData/TCV-X21/branch/main/graph/badge.svg?token=mPj5fc8EX3)](https://codecov.io/gh/SPCData/TCV-X21)
-
 ## Changelog
 
 1. Dec 13, 2021: Initial release ([version 1](https://zenodo.org/records/5776286))
