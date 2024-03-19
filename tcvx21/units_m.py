@@ -17,6 +17,7 @@ os.environ["PINT_ARRAY_PROTOCOL_FALLBACK"] = "0"
 unit_registry = pint.UnitRegistry()
 Quantity = unit_registry.Quantity
 Dimensionless = Quantity(1, "")
+unit_registry.define("photons = 1 particle")
 
 # Silence NEP 18 warning
 with warnings.catch_warnings():

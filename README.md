@@ -2,7 +2,6 @@
 
 ## Quick links
 
-<!-- [![Paper](https://img.shields.io/badge/Paper-Nuclear%20Fusion-critical)](https://iopscience.iop.org/journal/0029-5515) -->
 [![arXiv](http://img.shields.io/badge/arXiv-arXiv%3A2109.01618-B31B1B.svg)](https://arxiv.org/abs/2109.01618)
 [![PDF](https://img.shields.io/badge/PDF-Oliveira%20%26%20Body%20et%20al.%202021-important)](https://doi.org/10.1088/1741-4326/ac4cde)
 
@@ -12,14 +11,16 @@
 [![Dataset licence](https://img.shields.io/badge/Dataset%20License-CC--BY--4.0-brightgreen)](LICENSE)
 [![Software licence](https://img.shields.io/badge/Software%20License-MIT-brightgreen)](tcvx21/LICENSE)
 
-[![Test Python package](https://github.com/SPCData/TCV-X21/actions/workflows/test_python_package.yml/badge.svg?branch=main)](https://github.com/SPCData/TCV-X21/actions/workflows/test_python_package.yml)
-[![codecov](https://codecov.io/gh/SPCData/TCV-X21/branch/main/graph/badge.svg?token=mPj5fc8EX3)](https://codecov.io/gh/SPCData/TCV-X21)
+## Changelog
+
+1. Dec 13, 2021: Initial release ([version 1](https://zenodo.org/records/5776286))
+2. Mar 19, 2024: [version 2](https://zenodo.org/records/5776285) released with [Y. Wang et al., Nuclear Fusion, 2024](https://doi.org/10.48550/arXiv.2310.17390)
 
 ## Intro
 
 Welcome to TCV-X21. We're glad you've found us!
 
-This repository is designed to let you perform the analysis presented in *Oliveira and Body et. al., Nuclear Fusion, 2021*, both using the data given in the paper, and with a turbulence simulation of your own. We hope that, by providing the analysis, the TCV-X21 case can be used as a standard validation and bench-marking case for turbulence simulations of the divertor in fusion experiments. The repository allows you to scrutinise and suggest improvements to the analysis (there's always room for improvement), to directly interact with and explore the data in greater depth than is possible in a paper, and — we hope — use this case to test a simulation of your own.
+This repository is designed to let you perform the analysis presented in *Oliveira and Body et. al., Nuclear Fusion, 2022*, both using the data given in the paper, and with a turbulence simulation of your own. We hope that, by providing the analysis, the TCV-X21 case can be used as a standard validation and bench-marking case for turbulence simulations of the divertor in fusion experiments. The repository allows you to scrutinise and suggest improvements to the analysis (there's always room for improvement), to directly interact with and explore the data in greater depth than is possible in a paper, and — we hope — use this case to test a simulation of your own.
 
 To use this repository, you'll need to either use the `mybinder.org` link below OR user rights on a computer with Python-3, conda and git-lfs pre-installed.
 
@@ -69,15 +70,18 @@ For the software, you can use, modify and share without attribution or marking c
 
 ### Acknowledgement guidelines
 
-If you use any of the content of the TCV-X21 repository in one of your publications and/or talks, please cite ![DOI](https://doi.org/10.1088/1741-4326/ac4cde) and properly place the acknowledgements as 
+If you use any of the content of the TCV-X21 repository in one of your publications and/or talks, please cite [Oliveira and Body et. al., Nuclear Fusion, 2022](https://doi.org/10.1088/1741-4326/ac4cde) and properly place the acknowledgements as 
 instructed below. We would also appreciate it if you informed us about your work by sending us an email to spc.data@epfl.ch. This will let us keep track of how the dataset is being used.
 
-If you use the TCV-X21 experimental and/or simulation dataset in your article, please use the following acknowledgement: "This work made use of the version X of the TCV-X21 experimental and/or simulation 
-dataset(s) provided by the team(s) Y and publicly released under the CC-BY 4.0 license.". The version X corresponds to both the Zenodo version and the Github release version. The teams to be used in Y are those 
-responsible for the preparation of the datasets used in **your** work and are highlighted in boldface in the file `acknowledgements/template_acknowledgement.pptx`.
+If you use the TCV-X21 experimental and/or simulation dataset in your article, please use the following acknowledgement:
+```
+This work made use of the version X of the TCV-X21 experimental and/or simulation 
+dataset(s) provided by the team(s) Y and publicly released under the CC-BY 4.0 license.
+```
+The version `X` corresponds to version of the Zenodo dataset and the Github tag (hopefully these match).
+The teams to be used in `Y` are those responsible for the preparation of the datasets used in **your** work and are highlighted in boldface in the file `acknowledgements/template_acknowledgement.pptx`.
 
-If you use the TCV-X21 experimental and/or simulation dataset in a talk, please use the layout for acknowledgements in `acknowledgements/template_acknowledgement.pptx` including only the teams that were 
-involved in the preparation of the dataset that you used.
+If you use the TCV-X21 experimental and/or simulation dataset in a talk, please use the layout for acknowledgements in `acknowledgements/template_acknowledgement.pptx` including only the teams that were involved in the preparation of the dataset that you used.
 
 
 ## Running the Jupyter notebooks (installation as non-root user)

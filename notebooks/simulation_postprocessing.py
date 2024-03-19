@@ -503,6 +503,7 @@ def plot_rdpa_field(rdpa_lineout, field, n_rsep=50, n_z=50):
     plt.ylabel(f"Z [{y.units}]")
     plt.title(f"RDPA {z.name} [{z_sample.units}]")
 
+
 plt.figure()
 plot_rdpa_field(lineouts["rdpa"], snaps.electron_temp.mean(dim=("phi", "tau")))
 
