@@ -196,6 +196,14 @@ class RecordWriter:
                 )
                 z[:] = data["Z"]
                 z.units = self.plain_text_units(data["Z_units"])
+            
+            if "theta" in data.keys():
+                # Vertical position
+                theta = observable_group.createVariable(
+                    varname="theta", datatype=np.float64, dimensions=("points",)
+                )
+                theta[:] = data["theta"]
+                theta.units = self.plain_text_units(data["theta_units"])
 
             if has_error:
                 error = observable_group.createVariable(
