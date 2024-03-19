@@ -150,29 +150,22 @@ class RecordWriter:
 
         plain_text_units = self.plain_text_units(data["units"])
 
-        if dimensionality == 0:
-            observable_group.createDimension(dimname="point", size=1)
+        if dimensionality in [0, 1]:
+            if dimensionality == 0: assert n_points == 1
+            observable_group.createDimension(dimname="points", size=n_points)
+
             value = observable_group.createVariable(
-                varname="value", datatype=np.float64, dimensions=("point",)
+                varname="value", datatype=np.float64, dimensions=("points",)
             )
             value[:] = strip_units(data["values"])
             value.units = plain_text_units
 
             if has_error:
                 error = observable_group.createVariable(
-                    varname="error", datatype=np.float64, dimensions=("point",)
+                    varname="error", datatype=np.float64, dimensions=("points",)
                 )
                 error[:] = strip_units(data["errors"])
                 error.units = plain_text_units
-
-        elif dimensionality == 1:
-            observable_group.createDimension(dimname="points", size=n_points)
-            value = observable_group.createVariable(
-                varname="value", datatype=np.float64, dimensions=("points",)
-            )
-
-            value[:] = strip_units(data["values"])
-            value.units = plain_text_units
 
             if "Ru" in data.keys():
                 r_upstream = observable_group.createVariable(
@@ -188,6 +181,7 @@ class RecordWriter:
                 )
                 r[:] = data["R"]
                 r.units = self.plain_text_units(data["R_units"])
+                if "R_info" in data.keys(): r.info = data["R_info"]
 
             if "Z" in data.keys():
                 # Vertical position
@@ -196,6 +190,7 @@ class RecordWriter:
                 )
                 z[:] = data["Z"]
                 z.units = self.plain_text_units(data["Z_units"])
+                if "Z_info" in data.keys(): z.info = data["Z_info"]
             
             if "theta" in data.keys():
                 # Vertical position
@@ -204,13 +199,7 @@ class RecordWriter:
                 )
                 theta[:] = data["theta"]
                 theta.units = self.plain_text_units(data["theta_units"])
-
-            if has_error:
-                error = observable_group.createVariable(
-                    varname="error", datatype=np.float64, dimensions=("points",)
-                )
-                error[:] = strip_units(data["errors"])
-                error.units = plain_text_units
+                if "theta_info" in data.keys(): theta.info = data["theta_info"]
 
         elif dimensionality == 2:
             # Write flattened RDPA data

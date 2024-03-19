@@ -613,11 +613,14 @@
                 "values": [],
                 "errors": [],
                 "R": [],
-                "R_units": "cm",
+                "R_units": "m",
+                "R_info": "Radial location of the starting points of chords of view",
                 "Z": [],
-                "Z_units": "cm",
+                "Z_units": "m",
+                "Z_info": "Vertical location of the starting points of chords of view",
                 "theta": [],
-                "theta_units": ""
+                "theta_units": "rad",
+                "theta_info": "Angle between chords of view and the negative R axis"
             },
             "D6_2": {
                 "name": "Deuterium Balmer D6->2 line intensity",
@@ -628,11 +631,14 @@
                 "values": [],
                 "errors": [],
                 "R": [],
-                "R_units": "cm",
+                "R_units": "m",
+                "R_info": "Radial location of the starting points of chords of view",
                 "Z": [],
-                "Z_units": "cm",
+                "Z_units": "m",
+                "Z_info": "Vertical location of the starting points of chords of view",
                 "theta": [],
-                "theta_units": ""
+                "theta_units": "rad",
+                "theta_info": "Angle between chords of view and the negative R axis"
             },
             "D7_2": {
                 "name": "Deuterium Balmer D7->2 line intensity",
@@ -643,11 +649,49 @@
                 "values": [],
                 "errors": [],
                 "R": [],
-                "R_units": "cm",
+                "R_units": "m",
+                "R_info": "Radial location of the starting points of chords of view",
                 "Z": [],
-                "Z_units": "cm",
+                "Z_units": "m",
+                "Z_info": "Vertical location of the starting points of chords of view",
                 "theta": [],
-                "theta_units": ""
+                "theta_units": "rad",
+                "theta_info": "Angle between chords of view and the negative R axis"
+            }
+        }
+    },
+    "p-n": {
+        "name": "Baratron neutral pressure gauge",
+        "observables": {
+            "p_div": {
+                "name": "Neutral pressure at the divertor floor",
+                "units": "Pa",
+                "experimental_hierarchy": 1,
+                "dimensionality": 0,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "R": [],
+                "R_units": "m",
+                "R_info": "Radial location of the observation point",
+                "Z": [],
+                "Z_units": "m",
+                "Z_info": "Vertical location of the observation point"
+            },
+            "p_tmp": {
+                "name": "Neutral pressure at the turbo pump",
+                "units": "Pa",
+                "experimental_hierarchy": 2,
+                "dimensionality": 0,
+                "simulation_hierarchy": -1,
+                "values": [],
+                "errors": [],
+                "R": [],
+                "R_units": "m",
+                "R_info": "Radial location of the observation point",
+                "Z": [],
+                "Z_units": "m",
+                "Z_info": "Vertical location of the observation point"
             }
         }
     }

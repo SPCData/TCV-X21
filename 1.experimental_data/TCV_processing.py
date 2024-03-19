@@ -53,7 +53,22 @@ for field_direction, field_direction_dict in expt.items():
     for observable_data in dss_dict["observables"].values():
         observable_data["R"] = dss_dict["R"]
         observable_data["Z"] = dss_dict["Z"]
-        # observable_data["theta"] = dss_dict["theta"]
+        observable_data["theta"] = dss_dict["theta"]
+
+        (
+            observable_data["R_units"],
+            observable_data["Z_units"],
+            observable_data["theta_units"],
+        ) = ("m", "m", "rad")
+        (
+            observable_data["R_info"],
+            observable_data["Z_info"],
+            observable_data["theta_info"],
+        ) = (
+            "Radial location of the starting points of chords of view",
+            "Vertical location of the starting points of chords of view",
+            "Angle between chords of view and the negative R axis",
+        )
 
 
 # %% [markdown]
@@ -152,15 +167,13 @@ def write_to_standard_dictionary(
             # Set unitless quantities to have an empty string as their 'units'
             source[key] = ""
 
-        if (key in ["values", "errors", "Ru", "Zx", "R", "Z"]) or (
-            source[key] == dest[key]
-        ):
+        if key in ["values", "errors", "Ru", "Zx", "R", "Z", "theta"]:
             # Check that all of the static fields in the template are unchanged
             # Raise a warning if a mismatch is found (some of these occur due to strings changing in the round-trip to MATLAB)
-            dest[key] = source[key]
-        elif (key not in ["values", "errors", "Ru", "Zx"]) and (
-            source[key] != dest[key]
-        ):
+            dest[key] = np.array(source[key])
+        elif source[key] == dest[key]:
+            pass
+        else:
             # Take the value from the source, and warn
             warnings.warn(
                 f"Source and destination did not match for static attribute {key}. Source was '{source[key]}' and dest was '{dest[key]}', for {field_direction}:{diagnostic}:{observable}"
@@ -169,11 +182,12 @@ def write_to_standard_dictionary(
     shape = dest["values"].shape
     for key in ["values", "errors", "Ru", "Zx"]:
         if key in dest:
+            val = dest[key]
             assert (
-                dest[key].shape == shape
-            ), f"Array shape did not match for {field_direction}:{diagnostic}:{observable}:{key} -- {shape}, {dest[key].shape}"
+                val.shape == shape
+            ), f"Array shape did not match for {field_direction}:{diagnostic}:{observable}:{key} -- {shape}, {val.shape}"
             assert np.issubdtype(
-                dest[key].dtype, np.number
+                val.dtype, np.number
             ), f"Array contained non-numerical values for {field_direction}:{diagnostic}:{observable}:{key}."
 
 
