@@ -171,16 +171,15 @@ class RecordWriter:
                 varname="value", datatype=np.float64, dimensions=("points",)
             )
 
-            assert np.size(data["Ru"]) == n_points
-
             value[:] = strip_units(data["values"])
             value.units = plain_text_units
 
-            r_upstream = observable_group.createVariable(
-                varname="Rsep_omp", datatype=np.float64, dimensions=("points",)
-            )
-            r_upstream[:] = data["Ru"]
-            r_upstream.units = self.plain_text_units(data["Ru_units"])
+            if "Ru" in data.keys():
+                r_upstream = observable_group.createVariable(
+                    varname="Rsep_omp", datatype=np.float64, dimensions=("points",)
+                )
+                r_upstream[:] = data["Ru"]
+                r_upstream.units = self.plain_text_units(data["Ru_units"])
 
             # Radial position -- not required, but nice for reference
             if "R" in data.keys():

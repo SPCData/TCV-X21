@@ -7,9 +7,9 @@
 #       format_version: '1.3'
 #       jupytext_version: 1.13.3
 #   kernelspec:
-#     display_name: tcv-x21
+#     display_name: Python 3
 #     language: python
-#     name: tcv-x21
+#     name: python3
 # ---
 
 # %% [markdown] pycharm={"name": "#%% md\n"}
@@ -31,7 +31,7 @@ import numpy as np
 
 # %%
 expt = tcvx21.file_io.read_struct_from_file(
-    Path("dataset_TCVX21.mat"), struct_name="dataset"
+    Path("dataset_TCVX21_v2.mat"), struct_name="dataset"
 )
 
 expt = dict(forward_field=expt["Forw"], reversed_field=expt["Rev"])
@@ -45,6 +45,15 @@ for field_direction, field_direction_dict in expt.items():
         field_direction_dict[diagnostic.replace("_", "-")] = field_direction_dict.pop(
             diagnostic
         )
+
+# %%
+for field_direction, field_direction_dict in expt.items():
+    dss_dict = field_direction_dict["DSS"]
+
+    for observable_data in dss_dict["observables"].values():
+        observable_data["R"] = dss_dict["R"]
+        observable_data["Z"] = dss_dict["Z"]
+        # observable_data["theta"] = dss_dict["theta"]
 
 
 # %% [markdown]
@@ -143,7 +152,9 @@ def write_to_standard_dictionary(
             # Set unitless quantities to have an empty string as their 'units'
             source[key] = ""
 
-        if (key in ["values", "errors", "Ru", "Zx"]) or (source[key] == dest[key]):
+        if (key in ["values", "errors", "Ru", "Zx", "R", "Z"]) or (
+            source[key] == dest[key]
+        ):
             # Check that all of the static fields in the template are unchanged
             # Raise a warning if a mismatch is found (some of these occur due to strings changing in the round-trip to MATLAB)
             dest[key] = source[key]
@@ -204,3 +215,5 @@ for field_direction in ["forward_field", "reversed_field"]:
     )
 
     writer.write_data_dict(standard_dictionary[field_direction])
+
+# %%
