@@ -8,7 +8,7 @@
 #       format_version: '1.3'
 #       jupytext_version: 1.13.3
 #   kernelspec:
-#     display_name: Python 3
+#     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
@@ -36,11 +36,31 @@ import scipy.io as sio
 # ## Set file paths and parameters
 
 # %%
+from tcvx21 import experimental_reference_dir
+
 # Set file paths and parameters for video generation
 # mat_file: Path to the MATLAB .mat file containing the data
 # out_mp4: Output filename for the generated video
-mat_file = "/home/yinwang/SPC/TCV-X21/1.experimental_data/GPI_data/GPI_TCVX21/70545_1.5650_1.5790.mat"  # <-- change this
-# out_mp4 = "brt_video_70545.mp4"
+gpi_data_directory = experimental_reference_dir / "GPI_data" / "GPI_TCVX21"
+assert gpi_data_directory.exists() and gpi_data_directory.is_dir()
+
+gpi_data_files = dict(
+    Outboard_midplane=gpi_data_directory / "77028_1.05_1.054.mat",
+    X_point_region=gpi_data_directory / "70336_1.5750_1.5854.mat",
+    Divertor_leg=gpi_data_directory / "70545_1.5650_1.5790.mat",
+)
+time_windows = dict(
+    Outboard_midplane=(1.05, 1.054),
+    X_point_region=(1.58, 1.5804),
+    Divertor_leg=(1.57, 1.574),
+)
+
+# Select one of the files to process
+region = "X_point_region"
+
+mat_file = gpi_data_files[region]
+time_window = time_windows[region]
+
 
 # Video settings
 fps = 5  # Frames per second for the output video
@@ -91,8 +111,13 @@ print("Shapes are consistent.")
 # %%
 # Optional: Select video start and stop time
 # Set your desired start and stop time in seconds (or the unit of t_window)
-t_start = 1.566  # video start time
-t_stop = 1.5661  # video stop time (default: last frame)
+offset = 0.0
+duration = 1e-3
+
+t_start = time_window[0] + offset  # video start time
+t_stop = min(
+    t_start + duration, time_window[1]
+)  # video stop time (default: last frame)
 
 # Find the indices corresponding to start and stop time
 t_start_idx = np.searchsorted(t_window, t_start)
