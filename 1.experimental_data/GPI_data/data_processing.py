@@ -39,8 +39,8 @@ import scipy.io as sio
 # Set file paths and parameters for video generation
 # mat_file: Path to the MATLAB .mat file containing the data
 # out_mp4: Output filename for the generated video
-mat_file = "/home/yinwang/SPC/TCV-X21/1.experimental_data/GPI_data/GPI_TCVX21/70336_1.5750_1.5854.mat"  # <-- change this
-out_mp4 = "brt_video_70336.mp4"
+mat_file = "/home/yinwang/SPC/TCV-X21/1.experimental_data/GPI_data/GPI_TCVX21/70545_1.5650_1.5790.mat"  # <-- change this
+# out_mp4 = "brt_video_70545.mp4"
 
 # Video settings
 fps = 5  # Frames per second for the output video
@@ -91,8 +91,8 @@ print("Shapes are consistent.")
 # %%
 # Optional: Select video start and stop time
 # Set your desired start and stop time in seconds (or the unit of t_window)
-t_start = 1.576  # video start time
-t_stop = 1.5761  # video stop time (default: last frame)
+t_start = 1.566  # video start time
+t_stop = 1.5661  # video stop time (default: last frame)
 
 # Find the indices corresponding to start and stop time
 t_start_idx = np.searchsorted(t_window, t_start)
@@ -207,9 +207,9 @@ HTML(ani.to_jshtml())
 # %%
 # Save the animation to an MP4 video file
 # This requires ffmpeg to be installed and available in the system PATH
-writer = animation.FFMpegWriter(fps=fps)
-ani.save(out_mp4, writer=writer, dpi=150)
-print("Saved:", out_mp4)
+# writer = animation.FFMpegWriter(fps=fps)
+# ani.save(out_mp4, writer=writer, dpi=150)
+# print("Saved:", out_mp4)
 
 
 # %%

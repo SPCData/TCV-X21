@@ -13,5 +13,7 @@ It includes 3 data files under `/GPI_TCVX21`, with the information listed below
 
 The datafiles are named with the discharge number and the starting and ending time, then the filament tracking algorithm used part of the data. 
 
+A jupyter notebook format script that loads and preview the data file is given as `data_processing.py`.
+
 Detailed information about the diagnostic and the dataset can be found in the paper.
 The full time range of the data in the gas puff can be obtained by contacting the authors of the paper. yinghan.wang@epfl.ch 
