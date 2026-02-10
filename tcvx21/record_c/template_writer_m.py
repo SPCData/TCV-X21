@@ -322,8 +322,54 @@ observables = {
             },
         },
     },
+    # "DSS": {
+    #     "name": "Divertor spectroscopy system",
+    #     # "R_units": "m",
+    #     # "R_info": "Radial location of the starting points of chords of view",
+    #     # "Z_units": "m",
+    #     # "Z_info": "Vertical location of the starting points of chords of view",
+    #     # "theta_units": "rad",
+    #     # "theta_info": "Angle between chords of view and the negative R axis",
+    #     "observables": {
+    #         "D5_2": {
+    #             "name": "Deuterium Balmer D5->2 line intensity",
+    #             "units": "photons/m^2/s",
+    #             "experimental_hierarchy": 2,
+    #         },
+    #         "D6_2": {
+    #             "name": "Deuterium Balmer D6->2 line intensity",
+    #             "units": "photons/m^2/s",
+    #             "experimental_hierarchy": 2,
+    #         },
+    #         "D7_2": {
+    #             "name": "Deuterium Balmer D7->2 line intensity",
+    #             "units": "photons/m^2/s",
+    #             "experimental_hierarchy": 2,
+    #         }
+    #     }
+    # },
+    # "p-n": {
+    #     "name": "Baratron neutral pressure gauge",
+    #     # "R_units": "m",
+    #     # "R_info": "Radial location of the observation point",
+    #     # "Z_units": "m",
+    #     # "Z_info": "Vertical location of the observation point"
+    #     "observables": {
+    #         "p_div": {
+    #             "name": "Neutral pressure at the divertor floor",
+    #             "units": "Pa",
+    #             "experimental_hierarchy": 1,
+    #         },
+    #         "p_tmp": {
+    #             "name": "Neutral pressure at the turbo pump",
+    #             "units": "Pa",
+    #             "experimental_hierarchy": 2,
+    #         }
+    #     }
+    # },
 }
 
+# diagnostics_0d = "p-n", "DSS"
 diagnostics_1d = "LFS-LP", "HFS-LP", "LFS-IR", "FHRP", "TS"
 diagnostics_2d = "RDPA"
 
@@ -335,6 +381,9 @@ def observables_template():
     for diagnostic_key, diagnostic in observables_filled.items():
         for observable in diagnostic["observables"].values():
 
+            # if diagnostic_key in diagnostics_0d:
+            #     observable["dimensionality"] = 0
+            
             if diagnostic_key in diagnostics_1d:
                 observable["dimensionality"] = 1
 
@@ -350,8 +399,9 @@ def observables_template():
             observable["values"] = []
             observable["errors"] = []
 
-            observable["Ru"] = []
-            observable["Ru_units"] = "cm"
+            if observable["dimensionality"] >= 1:
+                observable["Ru"] = []
+                observable["Ru_units"] = "cm"
 
             if observable["dimensionality"] == 2:
                 observable["Zx"] = []

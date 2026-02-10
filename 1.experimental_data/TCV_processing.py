@@ -7,7 +7,7 @@
 #       format_version: '1.3'
 #       jupytext_version: 1.13.3
 #   kernelspec:
-#     display_name: Python 3
+#     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
@@ -31,7 +31,7 @@ import numpy as np
 
 # %%
 expt = tcvx21.file_io.read_struct_from_file(
-    Path("dataset_TCVX21_v2.mat"), struct_name="dataset"
+    tcvx21.experimental_reference_dir / "dataset_TCVX21_v2.mat", struct_name="dataset"
 )
 
 expt = dict(forward_field=expt["Forw"], reversed_field=expt["Rev"])
@@ -220,10 +220,11 @@ from tcvx21.record_c import RecordWriter
 for field_direction in ["forward_field", "reversed_field"]:
 
     writer = RecordWriter(
-        file_path=Path(f"TCV_{field_direction}.nc"),
+        file_path=tcvx21.experimental_reference_dir / f"TCV_{field_direction}.nc",
         descriptor="TCV",
-        description=Path(
-            f"reference_scenario/TCV_{field_direction}_description.txt"
+        description=(
+            tcvx21.experimental_reference_dir
+            / f"reference_scenario/TCV_{field_direction}_description.txt"
         ).read_text(),
         allow_overwrite=True,
     )

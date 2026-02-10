@@ -162,8 +162,6 @@ plt.ylabel("Z [m]")
 plt.gca().set_aspect("equal")  # Ensure aspect ratio is equal
 plt.title(f"Frame k={k}, t={t_window[k]:.6g}")
 plt.colorbar(label="brt")
-plt.show()
-
 
 # %% [markdown]
 # ## Create animation
