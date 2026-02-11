@@ -35,16 +35,3 @@ jobs:
       run: |
         conda install pytest
         pytest
-    
-    - name: "Upload coverage to Codecov"
-      uses: codecov/codecov-action@v5
-      with:
-        fail_ci_if_error: true
-        # Note: token might be required in v4+ depending on repository visibility
-        # token: ${{ secrets.CODECOV_TOKEN }} 
-    
-    - name: Upload coverage file
-      uses: actions/upload-artifact@v4
-      with:
-        name: coverage-file
-        path: coverage.xml
