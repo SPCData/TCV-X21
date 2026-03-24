@@ -13,6 +13,7 @@ notebooks = dict(
     data_exploration=(notebook_dir / "data_exploration.ipynb"),
     bulk_process=(notebook_dir / "bulk_process.ipynb"),
     TCV_processing=(experimental_reference_dir / "TCV_processing.ipynb"),
+    GPI_processing=(experimental_reference_dir / "GPI_data" / "data_processing.ipynb"),
     RDPA_coordinates=(
         experimental_reference_dir / "reference_scenario" / "RDPA_coordinates.ipynb"
     ),
